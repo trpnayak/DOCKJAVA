@@ -5,7 +5,7 @@ FROM openjdk:latest
 WORKDIR /app
 
 # Copy the Java source code to the container
-COPY HelloWorld.java /app
+COPY . /app
 
 # Compile the Java application
 RUN javac HelloWorld.java
