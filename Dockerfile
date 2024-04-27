@@ -1,11 +1,14 @@
-# Use a base image with Java installed
+# Use the latest OpenJDK base image
 FROM openjdk:latest
 
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the compiled Java application to the container
-COPY . /app
-CMD ["javac","HelloWorld.java"]
+# Copy the Java source code to the container
+COPY HelloWorld.java /app
+
+# Compile the Java application
+RUN javac HelloWorld.java
+
 # Run the Java application when the container starts
 CMD ["java", "HelloWorld"]
